@@ -1,5 +1,5 @@
 Blog2::Application.routes.draw do
 
-  # root 'welcome#index'
+  root 'posts#index'
   resources :posts
 end

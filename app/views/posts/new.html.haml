@@ -1,0 +1,10 @@
+%h1 Новая запись
+= form_for :post, url: posts_path do |f|
+  %p
+    Заголовок <br>
+    = f.text_field :title 
+  %p
+    Содержание: <br>
+    = f.text_area :content 
+  %p
+    = f.submit value: "Создать запись"

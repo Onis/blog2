@@ -1,0 +1,9 @@
+%h1 Просмотр записей
+%table
+  %tr
+    %th Заголовок
+    %th Содержание
+  - @posts.each do |post|
+    %tr
+      %td= post.title
+      %td= post.content

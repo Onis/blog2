@@ -4,20 +4,36 @@ class PostsController < ApplicationController
 		@posts = Post.all
 	end
 
-	def new
-		
+	def show
+		@post = Post.find(params[:id])
+	end
+
+	def new	
+	end
+
+	def edit
+		@post = Post.find(params[:id])		
 	end
 
 	def create
-		@post = Post.new(posts_params)	
-
+		@post = Post.new(posts_params)
 		@post.save
 		redirect_to @post
 	end
 
-	def show
+	def update
 		@post = Post.find(params[:id])
+		@post.update(posts_params)
+		redirect_to @post		
 	end
+
+	def destroy
+		@post = Post.find(params[:id])
+		@post.destroy
+		redirect_to posts_path
+	end
+
+
 
 	private
   def posts_params
